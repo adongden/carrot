@@ -1,10 +1,13 @@
 name: Sync
 on:
+  repository_dispatch:
   push:
     branches:
+      - main
       - dev
+  workflow_dispatch:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: "00 */2 * * *"
 
 jobs:
   sync-readme:
